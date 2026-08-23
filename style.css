@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d2c54;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo h2 {
+    color: #fff;
+    font-weight: 700;
+}
+
+.logo h2 span {
+    color: #00b4d8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00b4d8;
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(13, 44, 84, 0.8), rgba(0, 180, 216, 0.7)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: #90e0ef;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #00b4d8;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0077b6;
+    transform: translateY(-2px);
+}
+
+/* About Section */
+.about {
+    padding: 50px 10%;
+    text-align: center;
+    background: white;
+}
+
+.about h2 {
+    color: #0d2c54;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Resources Section */
+.resources {
+    padding: 60px 5%;
+}
+
+.resources h2 {
+    text-align: center;
+    color: #0d2c54;
+    font-size: 2rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #00b4d8;
+    background: transparent;
+    color: #00b4d8;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #00b4d8;
+    color: white;
+}
+
+/* Grid Layout */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    background: #eef9bf;
+    color: #0d2c54;
+    font-size: 3rem;
+    padding: 30px;
+    text-align: center;
+    background: #e0f7fa;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.badge {
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.presentation-badge { background: #ffe0b2; color: #e65100; }
+.video-badge { background: #ffcdd2; color: #c62828; }
+.image-badge { background: #c8e6c9; color: #2e7d32; }
+.notes-badge { background: #e1bee7; color: #6a1b9a; }
+
+.card-content h3 {
+    font-size: 1.2rem;
+    color: #0d2c54;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.download-btn, .watch-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background: #0d2c54;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.download-btn:hover, .watch-btn:hover {
+    background: #00b4d8;
+}
+
+/* Footer */
+footer {
+    background: #0d2c54;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}

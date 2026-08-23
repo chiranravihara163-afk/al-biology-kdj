@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/L Biology Resource Hub - KDJ Tours</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>KDJ <span>Tours & Edu</span></h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">මුල් පිටුව</a></li>
+            <li><a href="#about">අප ගැන</a></li>
+            <li><a href="#resources">පාඩම් මාධ්‍ය</a></li>
+            <li><a href="#contact">සම්බන්ධ කරගන්න</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>A/L Biology <span>ජයගන්න හොඳම තැන</span></h1>
+            <p>ජීව විද්‍යාව පාඩම් මාලා, වීඩියෝ, පින්තූර සහ Presentations සියල්ල එකම තැනකින් පහසුවෙන් අධ්‍යයනය කරන්න.</p>
+            <a href="#resources" class="btn-primary">අධ්‍යයන ද්‍රව්‍ය වෙත</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>A/L ජීව විද්‍යා අධ්‍යයන කේන්ද්‍රය</h2>
+        <p>A/L Biology හදාරන සියලුම යහළුවන් වෙනුවෙන් සංකීර්ණ පාඩම් කොටස් ඉතා සරලව හා රූපසටහන්, Presentations මඟින් ස්වයං අධ්‍යයනය කිරීමට මෙම වෙබ් අඩවිය නිර්මාණය කර ඇත.</p>
+    </section>
+
+    <!-- Resources Section with Category Filters -->
+    <section id="resources" class="resources">
+        <h2>අධ්‍යයන ද්‍රව්‍ය (Resource Library)</h2>
+        <p class="subtitle">ඔබට අවශ්‍ය මාධ්‍ය වර්ගය තෝරාගන්න:</p>
+
+        <!-- Category Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">සියල්ල (All)</button>
+            <button class="filter-btn" data-filter="presentation">Presentations (PPT)</button>
+            <button class="filter-btn" data-filter="video">වීඩියෝ (Videos)</button>
+            <button class="filter-btn" data-filter="image">රූපසටහන් (Images)</button>
+            <button class="filter-btn" data-filter="notes">සටහන් (Short Notes)</button>
+        </div>
+
+        <!-- Resource Cards Grid -->
+        <div class="resource-grid">
+            
+            <!-- Presentation Item 1 -->
+            <div class="card presentation">
+                <div class="card-icon"><i class="fas fa-file-powerpoint"></i></div>
+                <div class="card-content">
+                    <span class="badge presentation-badge">Presentation</span>
+                    <h3>ජීවයේ රසායනික හා සෛලීය පදනම</h3>
+                    <p>සෛලීය ව්‍යුහය සහ ජීව අණු පිළිබඳ සම්පූර්ණ Slide Presentation එක.</p>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> Download PPT</a>
+                </div>
+            </div>
+
+            <!-- Video Item 1 -->
+            <div class="card video">
+                <div class="card-icon"><i class="fas fa-play-circle"></i></div>
+                <div class="card-content">
+                    <span class="badge video-badge">Video Lesson</span>
+                    <h3>ප්‍රකාශ සංස්ලේෂණය (Photosynthesis)</h3>
+                    <p>ආලෝක හා අඳුරු ප්‍රතික්‍රියා පැහැදිලි කෙරෙන වීඩියෝ පාඩම.</p>
+                    <a href="#" class="watch-btn"><i class="fas fa-play"></i> නරඹන්න</a>
+                </div>
+            </div>
+
+            <!-- Image Item 1 -->
+            <div class="card image">
+                <div class="card-icon"><i class="fas fa-image"></i></div>
+                <div class="card-content">
+                    <span class="badge image-badge">Diagram / Image</span>
+                    <h3>මානව හෘදයේ ව්‍යුහය</h3>
+                    <p>පැහැදිලි ලකුණු කිරීම් සහිත මානව හෘදයේ රූපසටහන් සමූහය.</p>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> Download Image</a>
+                </div>
+            </div>
+
+            <!-- Presentation Item 2 -->
+            <div class="card presentation">
+                <div class="card-icon"><i class="fas fa-file-powerpoint"></i></div>
+                <div class="card-content">
+                    <span class="badge presentation-badge">Presentation</span>
+                    <h3>ජාන විද්‍යාව සහ පරම්පරාගත වීම</h3>
+                    <p>Mendelian Genetics පිළිබඳ ප්‍රායෝගික නිදර්ශන සහිත Slides.</p>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> Download PPT</a>
+                </div>
+            </div>
+
+            <!-- Short Notes Item 1 -->
+            <div class="card notes">
+                <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="card-content">
+                    <span class="badge notes-badge">Short Note</span>
+                    <h3>ශාක ආකාරය හා කෘත්‍යය - කෙටි සටහන්</h3>
+                    <p>විභාගයට වැදගත් වන ප්‍රධාන කරුණු කෙටියෙන් මතක තබාගන්න.</p>
+                    <a href="#" class="download-btn"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Video Item 2 -->
+            <div class="card video">
+                <div class="card-icon"><i class="fas fa-play-circle"></i></div>
+                <div class="card-content">
+                    <span class="badge video-badge">Video Lesson</span>
+                    <h3>ස්නායු පෙරසංඥා සහ ප්‍රතිචාර</h3>
+                    <p>මිනිස් ස්නායු පද්ධතියේ ක්‍රියාකාරිත්වය පැහැදිලි කරන වීඩියෝව.</p>
+                    <a href="#" class="watch-btn"><i class="fas fa-play"></i> නරඹන්න</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 KDJ Tours & Educational Resources. All Rights Reserved.</p>
+        <p>A/L Biology සුපිරි පාඩම් මාලා</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
