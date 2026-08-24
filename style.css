@@ -53,10 +53,24 @@ body {
     color: #00b4d8;
 }
 
+/* Mobile Burger Menu */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero {
-    height: 70vh;
-    background: linear-gradient(rgba(13, 44, 84, 0.8), rgba(0, 180, 216, 0.7)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    height: 60vh;
+    background: linear-gradient(rgba(13, 44, 84, 0.85), rgba(0, 180, 216, 0.75)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +90,7 @@ body {
 
 .hero-content p {
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 25px auto;
 }
 
@@ -96,28 +110,57 @@ body {
     transform: translateY(-2px);
 }
 
-/* About Section */
-.about {
-    padding: 50px 10%;
+/* Subject Selection Section */
+.subjects-section {
+    padding: 40px 5% 10px 5%;
     text-align: center;
-    background: white;
 }
 
-.about h2 {
+.subjects-section h2 {
     color: #0d2c54;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-.about p {
-    color: #666;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
+.subject-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.subject-btn {
+    padding: 12px 25px;
+    border: none;
+    background: #e0e1dd;
+    color: #0d2c54;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.subject-btn i {
+    margin-right: 8px;
+}
+
+.subject-btn:hover {
+    background: #0d2c54;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.subject-btn.active {
+    background: #0d2c54;
+    color: white;
+    box-shadow: 0 4px 12px rgba(13, 44, 84, 0.3);
 }
 
 /* Resources Section */
 .resources {
-    padding: 60px 5%;
+    padding: 40px 5% 60px 5%;
 }
 
 .resources h2 {
@@ -129,7 +172,7 @@ body {
 .subtitle {
     text-align: center;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .filter-buttons {
@@ -141,7 +184,7 @@ body {
 }
 
 .filter-btn {
-    padding: 10px 20px;
+    padding: 8px 18px;
     border: 2px solid #00b4d8;
     background: transparent;
     color: #00b4d8;
@@ -179,13 +222,17 @@ body {
 }
 
 .card-icon {
-    background: #eef9bf;
-    color: #0d2c54;
     font-size: 3rem;
     padding: 30px;
     text-align: center;
     background: #e0f7fa;
+    color: #0d2c54;
 }
+
+/* Custom Icon Backgrounds per Subject */
+.card.biology .card-icon { background: #e8f5e9; color: #2e7d32; }
+.card.physics .card-icon { background: #e3f2fd; color: #1565c0; }
+.card.chemistry .card-icon { background: #f3e5f5; color: #7b1fa2; }
 
 .card-content {
     padding: 20px;
@@ -204,10 +251,10 @@ body {
     text-transform: uppercase;
 }
 
-.presentation-badge { background: #ffe0b2; color: #e65100; }
-.video-badge { background: #ffcdd2; color: #c62828; }
-.image-badge { background: #c8e6c9; color: #2e7d32; }
-.notes-badge { background: #e1bee7; color: #6a1b9a; }
+/* Subject Badges */
+.bio-badge { background: #c8e6c9; color: #2e7d32; }
+.physics-badge { background: #bbdefb; color: #1565c0; }
+.chem-badge { background: #e1bee7; color: #7b1fa2; }
 
 .card-content h3 {
     font-size: 1.2rem;
@@ -239,6 +286,25 @@ body {
     background: #00b4d8;
 }
 
+/* About Section */
+.about {
+    padding: 50px 10%;
+    text-align: center;
+    background: white;
+}
+
+.about h2 {
+    color: #0d2c54;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* Footer */
 footer {
     background: #0d2c54;
@@ -251,4 +317,37 @@ footer {
 footer p {
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+/* Responsive Navigation Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #0d2c54;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 }
