@@ -402,6 +402,7 @@ footer p {
         width: 50%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        z-index: 999;
     }
 
     .nav-links li {
@@ -418,5 +419,25 @@ footer p {
 
     .hero-content h1 {
         font-size: 2rem;
+    }
+}
+
+/* Burger Animation for JS Toggle */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Small Screens Button Adjustment */
+@media screen and (max-width: 400px) {
+    .btn-group {
+        flex-direction: column;
     }
 }
