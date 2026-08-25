@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Video Popup Modal Handler (Watch Video බටන් Click කළ විට Video එක Open වීමට)
+    // 5. Video Popup Modal Handler
     const videoBtns = document.querySelectorAll('.watch-btn');
     const videoModal = document.getElementById('videoModal');
     const iframe = document.getElementById('youtubeIframe');
@@ -58,21 +58,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     videoBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const videoUrl = btn.getAttribute('data-video-url');
-            if (videoUrl && videoModal && iframe) {
+            // data-video හෝ data-video-url යන දෙකෙන් එකක් ලබා ගනී
+            const videoData = btn.getAttribute('data-video') || btn.getAttribute('data-video-url');
+
+            if (videoData && videoData !== 'YOUR_YOUTUBE_VIDEO_ID' && videoModal && iframe) {
                 e.preventDefault();
-                iframe.src = videoUrl;
+                
+                // වීඩියෝ ID එකක් නම් Embed URL එකක් සාදයි, නැතහොත් URL එක කෙලින්ම ගනී
+                let finalUrl = videoData;
+                if (!videoData.includes('http')) {
+                    finalUrl = `https://www.youtube.com/embed/${videoData}?autoplay=1`;
+                }
+
+                iframe.src = finalUrl;
                 videoModal.style.display = 'flex';
             }
         });
     });
 
     if (closeModal && videoModal && iframe) {
+        // Close Button (X) Click කළ විට
         closeModal.addEventListener('click', () => {
             videoModal.style.display = 'none';
             iframe.src = ''; // Video එක stop කිරීමට
         });
 
+        // Modal එකෙන් පිටත Click කළ විට ක්ලෝස් වීමට
         window.addEventListener('click', (e) => {
             if (e.target === videoModal) {
                 videoModal.style.display = 'none';
