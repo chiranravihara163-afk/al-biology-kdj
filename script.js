@@ -58,13 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     videoBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // data-video හෝ data-video-url යන දෙකෙන් එකක් ලබා ගනී
             const videoData = btn.getAttribute('data-video') || btn.getAttribute('data-video-url');
 
             if (videoData && videoData !== 'YOUR_YOUTUBE_VIDEO_ID' && videoModal && iframe) {
                 e.preventDefault();
                 
-                // වීඩියෝ ID එකක් නම් Embed URL එකක් සාදයි, නැතහොත් URL එක කෙලින්ම ගනී
                 let finalUrl = videoData;
                 if (!videoData.includes('http')) {
                     finalUrl = `https://www.youtube.com/embed/${videoData}?autoplay=1`;
@@ -77,13 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (closeModal && videoModal && iframe) {
-        // Close Button (X) Click කළ විට
         closeModal.addEventListener('click', () => {
             videoModal.style.display = 'none';
-            iframe.src = ''; // Video එක stop කිරීමට
+            iframe.src = '';
         });
 
-        // Modal එකෙන් පිටත Click කළ විට ක්ලෝස් වීමට
         window.addEventListener('click', (e) => {
             if (e.target === videoModal) {
                 videoModal.style.display = 'none';
